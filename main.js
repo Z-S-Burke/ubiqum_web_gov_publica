@@ -7,16 +7,18 @@ function memberTable(allMembers) {
         var tRow = tBody.insertRow("tRow");
         tRow.insertCell().innerHTML = i + 1 + ".";
 
-        if (allMembers[i].middle_name == null) {
-            var repName = allMembers[i].last_name + ", " + allMembers[i].first_name;
+        if (allMembers[i].middle_name == null) { //accounts for members w/o middle names
+            var repName =
+                allMembers[i].last_name + ", " + allMembers[i].first_name;
             tRow.insertCell().innerHTML =
-                repName.link(allMembers[i].url);
-            //allMembers[i].last_name + ", " + allMembers[i].first_name;
+                repName.link(allMembers[i].url); //uses the result to hyperlink the string 
         } else {
             var repName =
-                allMembers[i].last_name + ", " + allMembers[i].first_name + " " + allMembers[i].middle_name;
+                allMembers[i].last_name +
+                ", " + allMembers[i].first_name +
+                " " + allMembers[i].middle_name;
             tRow.insertCell().innerHTML =
-                repName.link(allMembers[i].url);
+                repName.link(allMembers[i].url); //uses the result to hyperlink the string
         }
 
         tRow.insertCell().innerHTML = allMembers[i].party;
@@ -33,4 +35,4 @@ function memberTable(allMembers) {
     }
 }
 
-console.log(memberTable(allMembers))
+memberTable(allMembers);
