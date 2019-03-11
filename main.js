@@ -6,26 +6,31 @@ function memberTable(allMembers) {
     for (var i = 0; i < allMembers.length; i++) {
         var tRow = tBody.insertRow("tRow");
         tRow.insertCell().innerHTML = i + 1 + ".";
-        if (allMembers[i].middle_name == null) {
-            tRow.insertCell().innerHTML =
-                allMembers[i].last_name + ", " + allMembers[i].first_name;
-        } else {
-            tRow.insertCell().innerHTML = allMembers[i].last_name + ", " + allMembers[i].first_name + " " + allMembers[i].middle_name;
-        }
-        tRow.insertCell().innerHTML = allMembers[i].party;
 
+        if (allMembers[i].middle_name == null) {
+            var repName = allMembers[i].last_name + ", " + allMembers[i].first_name;
+            tRow.insertCell().innerHTML =
+                repName.link(allMembers[i].url);
+            //allMembers[i].last_name + ", " + allMembers[i].first_name;
+        } else {
+            var repName =
+                allMembers[i].last_name + ", " + allMembers[i].first_name + " " + allMembers[i].middle_name;
+            tRow.insertCell().innerHTML =
+                repName.link(allMembers[i].url);
+        }
+
+        tRow.insertCell().innerHTML = allMembers[i].party;
         tRow.insertCell().innerHTML = allMembers[i].state;
 
-        tRow.insertCell().innerHTML = allMembers[i].seniority + " years";
+        if (allMembers[i].seniority == 1) {
+            tRow.insertCell().innerHTML = allMembers[i].seniority + " year";
+        } else {
+            tRow.insertCell().innerHTML = allMembers[i].seniority + " years";
+        }
 
-        tRow.insertCell().innerHTML = allMembers[i].votes_with_party_pct + "%";        
+        tRow.insertCell().innerHTML = allMembers[i].votes_with_party_pct + "%";
         tBody.append(tRow);
     }
 }
 
 console.log(memberTable(allMembers))
-/*
-console.log(data)
-console.log(data.results)
-console.log(data.results[0])
-console.log(data.results[0].members) */
