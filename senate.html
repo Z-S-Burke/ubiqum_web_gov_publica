@@ -2,58 +2,71 @@
 <html lang="en">
 
 <head>
-    <link src="assets/stylesheet/gov.css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/stylesheet/gov.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
-
-    <header>
-        <div>
-            <nav>
-                <div>
-                    <div>
-                        <a href="index.html">TGIF</a>
-                    </div>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li>
-                            <a href="#">Congress 113</a>
-                            <ul>
-                                <li><a href="senate.html">Senate</a></li>
-                                <li><a href="house.html">House</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
     <div>
-        <h2>Senators</h2>
-        <p>First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
-    </div>
+        <header class="mx-auto" style="width: 60%">
+            <div class="nav d-flex align-items-center">
+                <h1 class="col display-1"> <a href="index.html"> TGIF </a> </h1>
+                <h3 class="justify-content-end"> inf@tgif.com </p>
+            </div>
+            <div class ="bg-dark text-light">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"> Home </a>
+                    </li>
+                    <li>
+                        <div class="dropdown show">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                113th Congress
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="senate.html">Senate</a>
+                                <a class="dropdown-item" href="house.html">House</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </header>
 
-    <table>
-        <thead>
-            <tr>
-                <th> Members </th>
-                <th> Name </th>
-                <th> Party </th>
-                <th> State </th>
-                <th> Seniority </th>
-                <th> Votes with Party (%) </th>
-            </tr>
-        </thead>
-        <tbody id="tBody">
-            <tr id="tRow"> </tr>
-        </tbody>
-    </table>
 
-    <script src="/congress_113_senate.js"></script>
-    <script src="/main.js"> </script>
+
+        <div class=col style="height: 50px"> </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="mx-auto" style="width: 60%">
+                    <h2>Senators</h2>
+                    <p>First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
+                    <div class="col-4"> </div>
+                </div>
+            </div>
+
+            <table class="container-fluid mx-auto" style="width: 60%">
+                <thead>
+                    <tr>
+                        <th> Members </th>
+                        <th> Name </th>
+                        <th> Party </th>
+                        <th> State </th>
+                        <th> Seniority </th>
+                        <th> Votes with Party (%) </th>
+                    </tr>
+                </thead>
+                <tbody id="tBody">
+                    <tr id="tRow"> </tr>
+                </tbody>
+            </table>
+
+            <script src="/congress_113_senate.js"></script>
+            <script src="/main.js"> </script>
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        </div>
 </body>
 
 </html>
