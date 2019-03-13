@@ -50,37 +50,52 @@
                     <div class="col-4"> </div>
                 </div>
             </div>
-            <div class=col style="height: 30px"> </div>
-
-
-            <table class="table table-hover">
-                <thead class="thead-dark">
-                    <tr class="border">
-                        <th> Members </th>
-                        <th> Name </th>
-                        <th> Party </th>
-                        <th> State </th>
-                        <th> Seniority </th>
-                        <th> Votes with Party (%) </th>
-                    </tr>
-                </thead>
-                <tbody class="bg-light text-dark" id="tBody">
-                    <tr class="border-bottom" id="tRow"> </tr>
-                </tbody>
-            </table>
-
-            <footer class="mt-5">
-                <div class="d-flex justify-content-center">
-                    <p> &copy;2019 Transparent Government in Fact | TGIF </p>
-                </div>
-            </footer>
         </div>
+        <div class=col style="height: 30px"> </div>
+        <div class="d-flex justify-content-between">
+            <form id="partySelect">
+                <input class="party" type="checkbox" onchange="partySelect()" value="D"> </input> <label> Democrat </label>
+                <input class="party" type="checkbox" onchange="partySelect()" value="I"> </input> <label> Independent </label>
+                <input class="party" type="checkbox" onchange="partySelect()" value="R"> </input> <label> Republican </label>
+            </form>
+            <select class="form_drop" name="stateSelect">
+                <option value="Katzemaier"> </option>
+                <option value="Marjorie"> </option>
+                <option value="Greenbay"> </option>
+                <option value="North"> </option>
+                <option value="South"> </option>
+                <option value="Yeager"> </option>
+            </select>
+        </div>
+        <div class=col style="height: 30px"> </div>
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr class="border">
+                    <th> Members </th>
+                    <th> Name </th>
+                    <th> Party </th>
+                    <th> State </th>
+                    <th> Seniority </th>
+                    <th> Votes with Party (%) </th>
+                </tr>
+            </thead>
+            <tbody class="bg-light text-dark" id="tBody">
+                <tr class="border-bottom" id="tRow"> </tr>
+            </tbody>
+        </table>
 
-        <script src="/congress_113_senate.js"></script>
-        <script src="/main.js"> </script>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <footer class="mt-5">
+            <div class="d-flex justify-content-center">
+                <p> &copy;2019 Transparent Government in Fact | TGIF </p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/congress_113_senate.js"></script>
+    <script src="/main.js"> </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 

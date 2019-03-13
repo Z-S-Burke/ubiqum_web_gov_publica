@@ -36,3 +36,10 @@ function memberTable(allMembers) {
 }
 
 memberTable(allMembers);
+
+function partySelect() {
+    var partyNode = document.querySelectorAll('input[type=checkbox]:checked');
+    
+    var partyArr = Array.from(partyNode);
+    // return partyArr; 
+}
