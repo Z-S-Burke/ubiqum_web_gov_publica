@@ -55,7 +55,7 @@
                 <label> Independent <input class="party" type="checkbox" onchange="memberTable(allMembers)" id="partyCheck" value="I"> </input> </label>
                 <label> Republican <input class="party" type="checkbox" onchange="memberTable(allMembers)" id="partyCheck" value="R"> </input> </label> 
             </form>
-            <select id="state" name="states"></select>
+            <select id="state" onchange="memberTable(allMembers)" name="states"></select>
         </div>
         <div class=col style="height: 15px"> </div>
         <table class="table table-hover">
