@@ -11,7 +11,6 @@ function stateDrop() {
     }
     return option.value;
 }
-
 stateDrop();
 
 function memberTable(allMembers) {
@@ -53,19 +52,18 @@ function memberTable(allMembers) {
     } else {
         tBody.innerHTML = "";
         for (var i = 0; i < allMembers.length; i++) {
-        buildRow(allMembers[i]);
+            buildRow(allMembers[i]);
         }
     }
 }
 memberTable(allMembers);
-
 
 function buildRow(allMembers) {
     var tBody = document.getElementById("tBody");
     var tRow = tBody.insertRow();
 
     tBody.insertRow("tRow");
-    tRow.insertCell().innerHTML =  allMembers.title;
+    tRow.insertCell().innerHTML = allMembers.title;
 
     if (allMembers.middle_name == null) { //accounts for members w/o middle names
         var repName =
