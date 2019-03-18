@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <div class="mx-auto" style="width: 60%">
+    <div class="mx-auto" style="width: 70%">
         <header>
             <div>
                 <div class="d-flex justify-content-between align-items-center container-fluid">
@@ -18,19 +18,37 @@
                     </div>
                 </div>
             </div>
-            <div class="navbar bg-dark text-light">
-                <ul class="nav btn-group btn-group-lg mx-auto" role="group">
+            <div class="navbar bg-dark text-light d-flex justify-content-around">
+                <ul class="nav btn-group btn-group-lg" role="group">
                     <li class="nav-item">
                         <a class="nav-link text-white" href="index.html"> Home </a>
                     </li>
-                    <li>
+                    <li class="d-flex">
                         <div class="dropdown show">
-                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="members" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 113th Congress
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <div class="dropdown-menu" aria-labelledby="members">
                                 <a class="dropdown-item" href="senate.html">Senate</a>
                                 <a class="dropdown-item" href="house.html">House</a>
+                            </div>
+                        </div>
+                        <div class="dropdown show">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="attendance" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Attendance
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="attendance">
+                                <a class="dropdown-item" href="senate_attendance.html">Senate</a>
+                                <a class="dropdown-item" href="house_attendance.html">House</a>
+                            </div>
+                        </div>
+                        <div class="dropdown show">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="loyalty" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Party Loyalty
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="loyalty">
+                                <a class="dropdown-item" href="senate_loyalty.html">Senate</a>
+                                <a class="dropdown-item" href="house_loyalty.html">House</a>
                             </div>
                         </div>
                     </li>
@@ -85,6 +103,12 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script>
+            memberTable(allMembers)
+        </script>
+        <script>
+            stateDrop()
+        </script>
 </body>
 
 </html>

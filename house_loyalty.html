@@ -86,16 +86,13 @@
         <table class="table table-hover" id="tableTop">
             <thead class="thead-dark">
                 <tr class="border">
-                    <th> Members </th>
-                    <th> Name </th>
                     <th> Party </th>
-                    <th> State </th>
-                    <th> Seniority </th>
-                    <th> Votes with Party (%) </th>
+                    <th> # of Reps </th>
+                    <th> % voted with Party </th>
                 </tr>
             </thead>
-            <tbody class="bg-light text-dark" id="tBody">
-                <tr class="border-bottom" id="tRow"> </tr>
+            <tbody class="bg-light text-dark" onload="glanceBody(allMembers)" id="glanceBody">
+                <tr class="border-bottom" id="glanceRow"> </tr>
             </tbody>
         </table>
 
@@ -106,17 +103,17 @@
         </footer>
     </div>
 
-    <script src="/congress_113_senate.js"></script>
+    <script src="/congress_113_house.js"></script>
     <script src="/main.js"> </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
-        memberTable(allMembers)
+        glanceTable(allMembers)
+
     </script>
-    <script>
-        stateDrop()
-    </script>
+
+
 </body>
 
 </html>

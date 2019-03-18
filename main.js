@@ -11,18 +11,14 @@ function stateDrop() {
     }
     return option.value;
 }
-stateDrop();
 
 function memberTable(allMembers) {
     var tBody = document.getElementById("tBody");
-    var partyNode = document.querySelectorAll('input[type=checkbox]:checked'); //finds the values of all checkboxes on the page, places into a node
-    var partyArr = Array.from(partyNode); //converts the node into an Array type variable 
     var dropdown = document.getElementById("state");
-
+    var partyArr = partyCheck();
+    tBody.innerHTML = "";
+    tBody.insertRow("tRow");
     if (dropdown.selectedIndex != 0 && partyArr.length > 0) {
-
-        tBody.innerHTML = "";
-        tBody.insertRow("tRow");
         for (var i = 0; i < allMembers.length; i++) {
             for (var j = 0; j < partyArr.length; j++) {
                 if (allMembers[i].party == partyArr[j].value &&
@@ -32,8 +28,6 @@ function memberTable(allMembers) {
             }
         }
     } else if (partyArr.length > 0) {
-        tBody.innerHTML = "";
-        tBody.insertRow("tRow");
         for (var i = 0; i < allMembers.length; i++) {
             for (var j = 0; j < partyArr.length; j++) {
                 if (allMembers[i].party == partyArr[j].value) {
@@ -42,21 +36,18 @@ function memberTable(allMembers) {
             }
         }
     } else if (dropdown.selectedIndex != 0) {
-        tBody.innerHTML = "";
-        tBody.insertRow("tRow");
+
         for (var i = 0; i < allMembers.length; i++) {
             if (allMembers[i].state == usStates[dropdown.selectedIndex].abbreviation) {
                 buildRow(allMembers[i]);
             }
         }
     } else {
-        tBody.innerHTML = "";
         for (var i = 0; i < allMembers.length; i++) {
             buildRow(allMembers[i]);
         }
     }
 }
-memberTable(allMembers);
 
 function buildRow(allMembers) {
     var tBody = document.getElementById("tBody");
@@ -89,4 +80,73 @@ function buildRow(allMembers) {
     }
 
     tRow.insertCell().innerHTML = allMembers.votes_with_party_pct + "%";
+}
+
+function partyCheck() {
+    var partyNode = document.querySelectorAll('input[type=checkbox]:checked'); //finds the values of all checkboxes on the page, places into a node
+    var partyArr = Array.from(partyNode); //converts the node into an Array type variable 
+
+    return partyArr;
+}
+
+function demNumber() {
+    var numReps = 0;
+    for (var i = 0; i < allMembers.length; i++) {
+        if (allMembers[i].party == "D") {
+            console.log(numReps);
+            numReps++;
+        }
+    }
+    return numReps;
+}
+
+function repNumber() {
+    var numReps = 0;
+    for (var i = 0; i < allMembers.length; i++) {
+        if (allMembers[i].party == "R") {
+            numReps++;
+        }
+    }
+    return numReps;
+}
+
+function indNumber() {
+    var numReps = 0;
+    for (var i = 0; i < allMembers.length; i++) {
+        if (allMembers[i].party == "I") {
+            numReps++;
+        }
+    }
+    return numReps;
+}
+
+function glanceTable(allMembers) {
+    var tBody = document.getElementById("glanceBody");
+    var tRow = tBody.insertRow();
+
+    tBody.insertRow("glanceRow");
+    tRow.insertCell().innerHTML = "Democrats:";
+    tRow.insertCell().innerHTML = demNumber();
+    tRow.insertCell().innerHTML = "%";
+
+    tRow.insertCell().innerHTML = "Republicans:";
+    tRow.insertCell().innerHTML = repNumber();
+    tRow.insertCell().innerHTML = "%";
+
+    tRow.insertCell().innerHTML = "Independents:";
+    tRow.insertCell().innerHTML = indNumber();
+    tRow.insertCell().innerHTML = "%";
+
+    tRow.insertCell().innerHTML = "Total:";
+    tRow.insertCell().innerHTML = allMembers.length;
+    tRow.insertCell().innerHTML = "%";
+
+}
+
+function attendanceTable(allMembers) {
+
+}
+
+function loyaltyTable(allMembers) {
+
 }

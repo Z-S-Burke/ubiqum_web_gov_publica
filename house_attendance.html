@@ -63,39 +63,24 @@
         <div class="container-fluid">
             <div class="row">
                 <div>
-                    <h2 class="text-indent">Senators</h2>
-                    <p class="text-indent">First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
+                    <h2 class="text-indent">Attendance</h2>
+                    <p class="text-indent">The Constitution specifies that a majority of members constitutes a quorum to do business in each house. Representatives and senators rarely force the presence of a quorum by demanding quorum calls; thus, in most cases, debates continue even if a majority is not present.</p>
+                    <p> The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator stating "aye" or "no" when his or her name is announced. The House reserves roll-call votes for the most formal matters, as a roll-call of all 435 representatives takes quite some time; normally, members vote by electronic device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may (if present) cast the tiebreaking vote.</p>
                     <div class="col-4"> </div>
                 </div>
-            </div>
-        </div>
-        <div class=col style="height: 30px"> </div>
-        <div class="d-flex justify-content-around" style="width: 100%">
-            <div class="d-flex justify-contentn-around" style="width: 50%">
-                <form id="partySelect">
-                    <label> Democrat <input class="party" type="checkbox" onchange="memberTable(allMembers)" id="partyCheck" value="D"> </input> </label>
-                    <label> Independent <input class="party" type="checkbox" onchange="memberTable(allMembers)" id="partyCheck" value="I"> </input> </label>
-                    <label> Republican <input class="party" type="checkbox" onchange="memberTable(allMembers)" id="partyCheck" value="R"> </input> </label>
-                </form>
-            </div>
-            <div class="d-flex justify-content-end" style="width: 50%">
-                <select id="state" onchange="memberTable(allMembers)" name="states"></select>
             </div>
         </div>
         <div class=col style="height: 30px"> </div>
         <table class="table table-hover" id="tableTop">
             <thead class="thead-dark">
                 <tr class="border">
-                    <th> Members </th>
-                    <th> Name </th>
                     <th> Party </th>
-                    <th> State </th>
-                    <th> Seniority </th>
+                    <th> Num. of Representatives </th>
                     <th> Votes with Party (%) </th>
                 </tr>
             </thead>
-            <tbody class="bg-light text-dark" id="tBody">
-                <tr class="border-bottom" id="tRow"> </tr>
+            <tbody class="bg-light text-dark" id="glanceBody">
+                <tr class="border-bottom" id="glanceRow"> </tr>
             </tbody>
         </table>
 
@@ -106,16 +91,13 @@
         </footer>
     </div>
 
-    <script src="/congress_113_senate.js"></script>
+    <script src="/congress_113_house.js"></script>
     <script src="/main.js"> </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
-        memberTable(allMembers)
-    </script>
-    <script>
-        stateDrop()
+        glanceTable(allMembers)
     </script>
 </body>
 
