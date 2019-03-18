@@ -1,10 +1,11 @@
 var allMembers = data.results[0].members; //allows us to access just the members of the representative API
+var states = usStates; 
 
 function stateDrop() {
 
-    for (var i = 0; i < usStates.length; i++) {
+    for (var i = 0; i < states.length; i++) {
         var option = document.createElement("option");
-        option.text = usStates[i].abbreviation;
+        option.text = states[i].abbreviation;
         option.value = i;
         var select = document.getElementById("state");
         select.appendChild(option);
@@ -22,7 +23,7 @@ function memberTable(allMembers) {
         for (var i = 0; i < allMembers.length; i++) {
             for (var j = 0; j < partyArr.length; j++) {
                 if (allMembers[i].party == partyArr[j].value &&
-                    allMembers[i].state == usStates[dropdown.selectedIndex].abbreviation) {
+                    allMembers[i].state == states[dropdown.selectedIndex].abbreviation) {
                     buildRow(allMembers[i]);
                 }
             }
@@ -38,7 +39,7 @@ function memberTable(allMembers) {
     } else if (dropdown.selectedIndex != 0) {
 
         for (var i = 0; i < allMembers.length; i++) {
-            if (allMembers[i].state == usStates[dropdown.selectedIndex].abbreviation) {
+            if (allMembers[i].state == states[dropdown.selectedIndex].abbreviation) {
                 buildRow(allMembers[i]);
             }
         }
