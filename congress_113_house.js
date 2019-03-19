@@ -389,7 +389,6 @@
                         "dw_nominate": 0.649,
                         "ideal_point": 0.521346012,
                         "seniority": "4",
-
                         "total_votes": 1192,
                         "missed_votes": 0,
                         "total_present": 2,
@@ -435,7 +434,6 @@
                         "dw_nominate": 0.376,
                         "ideal_point": 0.850284197,
                         "seniority": "4",
-
                         "total_votes": 1192,
                         "missed_votes": 95,
                         "total_present": 0,

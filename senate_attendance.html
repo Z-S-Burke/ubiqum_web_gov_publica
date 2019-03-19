@@ -84,6 +84,36 @@
             </tbody>
         </table>
 
+        <div class=col style="height: 30px"> </div>
+        <h2> Least Engaged &#40;Bottom 10% Attendance Rate&#41; </h2>
+        <table class="table table-hover" id="tableTop">
+            <thead class="thead-dark">
+                <tr class="border">
+                    <th> Name </th>
+                    <th> Num. of Missed Votes </th>
+                    <th> Missed &#40;%&#41; </th>
+                </tr>
+            </thead>
+            <tbody class="bg-light text-dark" id="leastAttendBody">
+                <tr class="border-bottom" id="leastAttendRow"> </tr>
+            </tbody>
+        </table>
+
+        <div class=col style="height: 30px"> </div>
+        <h2> Most Engaged &#40;Top 10% Attendance Rate&#41; </h2>
+        <table class="table table-hover" id="tableTop">
+            <thead class="thead-dark">
+                <tr class="border">
+                    <th> Name </th>
+                    <th> Num. of Missed Votes </th>
+                    <th> Missed &#40;%&#41; </th>
+                </tr>
+            </thead>
+            <tbody class="bg-light text-dark" id="mostAttendBody">
+                <tr class="border-bottom" id="mostAttendRow"> </tr>
+            </tbody>
+        </table>
+
         <footer class="mt-5">
             <div class="d-flex justify-content-center">
                 <p> &copy;2019 Transparent Government in Fact | TGIF </p>
@@ -98,6 +128,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
         glanceTable(allMembers)
+
     </script>
 
 
