@@ -1,0 +1,15 @@
+.rBorder { 
+    border-right-width: thin;
+    border-right-style: groove;
+    border-right-color: slategray;
+    opacity: .2;
+    height: 100px; 
+}
+
+.lBorder { 
+    border-left-width: thin;
+    border-left-style: groove;
+    border-left-color: slategray;
+    opacity: .2;
+    height: 100px;
+}

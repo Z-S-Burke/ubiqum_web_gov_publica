@@ -62,109 +62,157 @@
         <div class=col style="height: 30px"> </div>
         <div class="container-fluid">
             <div class="row">
-                <div>
-                    <h2 class="text-indent">Attendance</h2>
+                <div class="border-bottom py-3">
+                    <h2 class="text-indent" style="text-align: center"> Attendance </h2>
                     <p class="text-indent">The Constitution specifies that a majority of members constitutes a quorum to do business in each house. Representatives and senators rarely force the presence of a quorum by demanding quorum calls; thus, in most cases, debates continue even if a majority is not present.</p>
                     <p> The Senate uses roll-call votes; a clerk calls out the names of all the senators, each senator stating "aye" or "no" when his or her name is announced. The House reserves roll-call votes for the most formal matters, as a roll-call of all 435 representatives takes quite some time; normally, members vote by electronic device. In the case of a tie, the motion in question fails. In the Senate, the Vice President may (if present) cast the tiebreaking vote.</p>
                     <div class="col-4"> </div>
                 </div>
             </div>
         </div>
-        <div class=col style="height: 30px"> </div>
-        <h2> The House at a Glance </h2>
-        <table class="table table-hover" id="tableTop">
-            <thead class="thead-dark">
-                <tr class="border">
-                    <th> Party </th>
-                    <th> Num. of Representatives </th>
-                    <th> Votes with Party &#40;%&#41; </th>
-                </tr>
-            </thead>
-            <tbody class="bg-light text-dark" id="glanceBody">
-                <tr class="border-bottom" id="glanceRow"> </tr>
-            </tbody>
-        </table>
-        
-        <div class=col style="height: 30px"> </div>
-        <h3> Most Engaged &#40;Attendance Rate of the Top 10&#37;&#41; - Overall </h3>
-        <table class="table table-hover" id="tableTop">
-            <thead class="thead-dark">
-                <tr class="border">
-                    <th> Name </th>
-                    <th> Party </th>                    
-                    <th> State </th>
-                    <th> Seniority &#40;Years&#41; </th>
-                    <th> Num. of Missed Votes </th>
-                    <th> Missed &#40;%&#41; </th>
-                </tr>
-            <tbody class="bg-light text-dark" id="mostAttendBody">
-                <tr class="border-bottom"> </tr>
-            </tbody>
-        </table>
-        
-        <div class=col style="height: 30px"> </div>
-        <h2> Most Engaged &#40;Top 10% Attendance Rate&#41; - Dem. </h2>
-        <table class="table table-hover" id="tableTop">
-            <thead class="thead-dark">
-                <tr class="border">
-                    <th> Name </th>
-                    <th> State </th>
-                    <th> Seniority &#40;Years&#41;</th>
-                    <th> Num. of Missed Votes </th>
-                    <th> Missed &#40;%&#41; </th>
-                </tr>
-            </thead>
-            <tbody class="bg-light text-dark" id="mostAttendBodyDem">
-                <tr class="border-bottom"> </tr>
-            </tbody>
-        </table>
-        <div class=col style="height: 30px"> </div>
-        <h3> Most Engaged &#40;Attendance Rate of the Top 10&#37;&#41; - Rep. </h3>
-        <table class="table table-hover" id="tableTop">
-            <thead class="thead-dark">
-                <tr class="border">
-                    <th> Name </th>
-                    <th> State </th>
-                    <th> Seniority &#40;Years&#41; </th>
-                    <th> Num. of Missed Votes </th>
-                    <th> Missed &#40;%&#41; </th>
-                </tr>
-            <tbody class="bg-light text-dark" id="mostAttendBodyRep">
-                <tr class="border-bottom"> </tr>
-            </tbody>
-        </table>
+        <h3 class="border p-2" style="text-align: center">
+            <a data-toggle="collapse" href="#glance"> The House at a Glance </a>
+        </h3>
+        <div class="panel-collapse collapse in" id="glance">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr class="border">
+                        <th> Party </th>
+                        <th> Num. of Representatives </th>
+                        <th> Votes with Party &#40;%&#41; </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-light text-dark" id="glanceBody">
+                    <tr class="border-bottom" id="glanceRow"> </tr>
+                </tbody>
+            </table>
+        </div>
 
-        <div class=col style="height: 30px"> </div>
-        <h3> Most Engaged &#40;Attendance Rate of the Top 10&#37;&#41; - Indep. </h3>
-        <table class="table table-hover" id="tableTop">
-            <thead class="thead-dark">
-                <tr class="border">
-                    <th> Name </th>
-                    <th> State </th>
-                    <th> Seniority &#40;Years&#41; </th>
-                    <th> Num. of Missed Votes </th>
-                    <th> Missed &#40;%&#41; </th>
-                </tr>
-            <tbody class="bg-light text-dark" id="mostAttendBodyInd">
-                <tr class="border-bottom"> </tr>
-            </tbody>
-        </table>
-        
-        
-        <div class=col style="height: 30px"> </div>
-        <h2> Least Engaged &#40;Bottom 10% Attendance Rate&#41; </h2>
-        <table class="table table-hover" id="tableTop">
-            <thead class="thead-dark">
-                <tr class="border">
-                    <th> Name </th>
-                    <th> Num. of Missed Votes </th>
-                    <th> Missed &#40;%&#41; </th>
-                </tr>
-            </thead>
-            <tbody class="bg-light text-dark" id="leastAttendBody">
-                <tr class="border-bottom" id="leastAttendRow"> </tr>
-            </tbody>
-        </table>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col rBorder"> </div>
+                <div class="col lBorder"> </div>
+            </div>
+        </div>
+        <h3 class="border p-2" style="text-align: center">
+            <a data-toggle="collapse" href="#collapseTop"> Most Engaged &#40;Attendance Rate of the Top 10&#37;&#41; - Overall </a>
+        </h3>
+        <div class="panel-collapse collapse" id="collapseTop">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr class="border">
+                        <th> Name </th>
+                        <th> Party </th>
+                        <th> State </th>
+                        <th> Seniority &#40;Years&#41; </th>
+                        <th> Num. of Missed Votes </th>
+                        <th> Missed &#40;%&#41; </th>
+                    </tr>
+                <tbody class="bg-light text-dark" id="mostAttendBody">
+                    <tr class="border-bottom"> </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col rBorder"> </div>
+                <div class="col lBorder"> </div>
+            </div>
+        </div>
+        <h3 class="border p-2" style="text-align: center">
+            <a data-toggle="collapse" href="#collapse1"> Most Engaged &#40;Top 10% Attendance Rate&#41; - Dem. </a>
+        </h3>
+        <div class="panel-collapse collapse" id="collapse1">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr class="border">
+                        <th> Name </th>
+                        <th> State </th>
+                        <th> Seniority &#40;Years&#41;</th>
+                        <th> Num. of Missed Votes </th>
+                        <th> Missed &#40;%&#41; </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-light text-dark" id="mostAttendBodyDem">
+                    <tr class="border-bottom"> </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col rBorder"> </div>
+                <div class="col lBorder"> </div>
+            </div>
+        </div>
+        <h3 class="border p-2" style="text-align: center">
+            <a data-toggle="collapse" href="#collapse2"> Most Engaged &#40;Attendance Rate of the Top 10&#37;&#41; - Rep. </a>
+        </h3>
+        <div class="panel-collapse collapse" id="collapse2">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr class="border">
+                        <th> Name </th>
+                        <th> State </th>
+                        <th> Seniority &#40;Years&#41; </th>
+                        <th> Num. of Missed Votes </th>
+                        <th> Missed &#40;%&#41; </th>
+                    </tr>
+                <tbody class="bg-light text-dark" id="mostAttendBodyRep">
+                    <tr class="border-bottom"> </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col rBorder"> </div>
+                <div class="col lBorder"> </div>
+            </div>
+        </div>
+        <h3 class="border p-2" style="text-align: center">
+            <a data-toggle="collapse" href="#collapse3"> Most Engaged &#40;Attendance Rate of the Top 10&#37;&#41; - Indep. </a>
+        </h3>
+        <div class="panel-collapse collapse" id="collapse3">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr class="border">
+                        <th> Name </th>
+                        <th> State </th>
+                        <th> Seniority &#40;Years&#41; </th>
+                        <th> Num. of Missed Votes </th>
+                        <th> Missed &#40;%&#41; </th>
+                    </tr>
+                <tbody class="bg-light text-dark" id="mostAttendBodyInd">
+                    <tr class="border-bottom"> </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col rBorder"> </div>
+                <div class="col lBorder"> </div>
+            </div>
+        </div>
+        <h3 class="border p-2" style="text-align: center">
+            <a data-toggle="collapse" href="#collapse4"> Least Engaged &#40;Bottom 10% Attendance Rate&#41; </a>
+        </h3>
+        <div class="panel-collapse collapse" id="collapse4">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr class="border">
+                        <th> Name </th>
+                        <th> Num. of Missed Votes </th>
+                        <th> Missed &#40;%&#41; </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-light text-dark" id="leastAttendBody">
+                    <tr class="border-bottom" id="leastAttendRow"> </tr>
+                </tbody>
+            </table>
+        </div>
 
         <footer class="mt-5">
             <div class="d-flex justify-content-center">
@@ -184,6 +232,7 @@
         topAttendTableDem();
         topAttendTableRep();
         topAttendTableInd();
+
     </script>
 </body>
 
