@@ -17,10 +17,10 @@ var repubSort = function (property) {
     };
 };
 var repubArray = repArr();
-repubArray.sort(repubSort('missed_votes_pct'));
+repubArray = repubArray.sort(repubSort('missed_votes_pct'));
 
 var repLoyal = repArr();
-repLoyal.sort(repubSort('votes_with_party_pct'));
+repLoyal = repLoyal.sort(repubSort('votes_with_party_pct'));
 
 var indSort = function (property) {
     return function (x, y) {
@@ -28,18 +28,20 @@ var indSort = function (property) {
     };
 };
 var indArray = indArr();
-indArray.sort(indSort('missed_votes_pct'));
+indArray = indArray.sort(indSort('missed_votes_pct'));
 
 var memSort = function (property) {
     return function (x, y) {
         return ((x[property] === y[property]) ? 0 : ((x[property] > y[property]) ? 1 : -1));
     };
 };
-var memArray = allMembers;
-memArray.sort(memSort('missed_votes_pct'));
+var memArray = memArr();
+memArray = memArray.sort(memSort('missed_votes_pct'));
+console.log(memArray);
 
 var memLoyal = allMembers;
-memLoyal.sort(memSort('votes_with_party_pct'));
+memLoyal = memLoyal.sort(memSort('votes_with_party_pct'));
+console.log(memLoyal);
 
 var states = usStates;
 
@@ -168,6 +170,15 @@ function indArr() {
         }
     }
     return indArray;
+}
+
+function memArr() {
+    var memArray = []; 
+    for (var i = 0; i < allMembers.length; i++) {
+        memArray.push(allMembers[i]);
+    }
+    
+    return memArray;
 }
 
 function glancePercent(arr) {
@@ -416,7 +427,7 @@ function leastAttendTable() {
     var tBody = document.getElementById("leastAttendBody");
     var topTen = memArray.length / 10;
     topTen = Math.floor(topTen);
-
+    console.log(memArray);
     for (var i = memArray.length - 1; i > memArray.length - topTen; i--) {
         var tRow1 = tBody.insertRow();
         if (memArray[i].middle_name == null) {
