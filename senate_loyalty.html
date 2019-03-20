@@ -11,7 +11,7 @@
         <header>
             <div>
                 <div class="d-flex justify-content-between align-items-center container-fluid">
-                    <img class="img-fluid" src="/assets/images/logo.jpg" href="index.html">
+                    <img class="img-fluid" src="/assets/images/logo.jpg" href="./index.html">
                     <div>
                         <img style="height: 50px" style="width: 50px" src="assets/images/email-logo.png" href="mailto:info@tgif.org">
                         <a href="mailto:info@tgif.org"> info@tgif.org </a>
@@ -20,20 +20,20 @@
             </div>
             <div class="navbar bg-dark text-light d-flex justify-content-around">
                 <ul class="nav btn-group btn-group-lg" role="group">
-                    <li class="nav-item">
+                    <li class="nav-item px-5">
                         <a class="nav-link text-white" href="index.html"> Home </a>
                     </li>
                     <li class="d-flex">
-                        <div class="dropdown show">
+                        <div class="dropdown show px-5">
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="members" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 113th Congress
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="members">
+                            <div class="dropdown-menu px-5" aria-labelledby="members">
                                 <a class="dropdown-item" href="senate.html">Senate</a>
                                 <a class="dropdown-item" href="house.html">House</a>
                             </div>
                         </div>
-                        <div class="dropdown show">
+                        <div class="dropdown show px-5">
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="attendance" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Attendance
                             </a>
@@ -42,7 +42,7 @@
                                 <a class="dropdown-item" href="house_attendance.html">House</a>
                             </div>
                         </div>
-                        <div class="dropdown show">
+                        <div class="dropdown show px-5">
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="loyalty" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Party Loyalty
                             </a>
@@ -57,49 +57,241 @@
         </header>
 
 
-        <div class=col style="height: 30px"> </div>
-        <img src="/assets/images/architecture-attractions-building-208702.jpg" class="img-fluid" alt="DC">
+        <h1 class="text-indent py-3" style="text-align: center"> Party Loyalty in the Senate </h1>
+        <img src="/assets/images/ballot-black-and-white-black-and-white-1550337.jpg" class="img-fluid" alt="DC">
         <div class=col style="height: 30px"> </div>
         <div class="container-fluid">
             <div class="row">
                 <div>
-                    <h2 class="text-indent">Senators</h2>
-                    <p class="text-indent">First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.</p>
+                    <p class="text-indent"> Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend to be the most faithful in voting for their party's nominee for office and legislation that backs their party's agenda. </p>
                     <div class="col-4"> </div>
                 </div>
             </div>
         </div>
-        <div class=col style="height: 30px"> </div>
-        <div class="d-flex justify-content-around" style="width: 100%">
-            <div class="d-flex justify-contentn-around" style="width: 50%">
-                <form id="partySelect">
-                    <label> Democrat <input class="party" type="checkbox" onchange="memberTable(allMembers)" id="partyCheck" value="D"> </input> </label>
-                    <label> Independent <input class="party" type="checkbox" onchange="memberTable(allMembers)" id="partyCheck" value="I"> </input> </label>
-                    <label> Republican <input class="party" type="checkbox" onchange="memberTable(allMembers)" id="partyCheck" value="R"> </input> </label>
-                </form>
-            </div>
-            <div class="d-flex justify-content-end" style="width: 50%">
-                <select id="state" onchange="memberTable(allMembers)" name="states"></select>
+        <h3 class="border bg-dark p-2" style="text-align: center">
+            <a class="text-light" data-toggle="collapse" href="#glance"> &#10509; Click &#10508; to See the Senate at a Glance </a>
+        </h3>
+        <div class="panel-collapse collapse in" id="glance">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr class="border">
+                        <th> Party </th>
+                        <th> Num. of Representatives </th>
+                        <th> Votes with Party &#40;%&#41; </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-light text-dark" id="glanceBody">
+                    <tr class="border-bottom" id="glanceRow"> </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row p-2">
+                <div class="col rBorder"> </div>
+                <div class="col lBorder"> </div>
             </div>
         </div>
-        <div class=col style="height: 30px"> </div>
-        <table class="table table-hover" id="tableTop">
-            <thead class="thead-dark">
-                <tr class="border">
-                    <th> Members </th>
-                    <th> Name </th>
-                    <th> Party </th>
-                    <th> State </th>
-                    <th> Seniority </th>
-                    <th> Votes with Party (%) </th>
-                </tr>
-            </thead>
-            <tbody class="bg-light text-dark" id="tBody">
-                <tr class="border-bottom" id="tRow"> </tr>
-            </tbody>
-        </table>
+        <h3 class="border p-2 bg-dark" style="text-align: center">
+            <a class="text-light" data-toggle="collapse" href="#collapseTop"> ... Most Loyal &#40;Top 10&#37; 'Votes with Party' Rate&#41; - Overall </a>
+        </h3>
+        <div class="panel-collapse collapse" id="collapseTop">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr class="border">
+                        <th> Name </th>
+                        <th> Party </th>
+                        <th> State </th>
+                        <th> Seniority &#40;Years&#41; </th>
+                        <th> Total Votes </th>
+                        <th> Votes with Party &#40;%&#41; </th>
+                    </tr>
+                <tbody class="bg-light text-dark" id="mostLoyalBody">
+                    <tr class="border-bottom"> </tr>
+                </tbody>
+            </table>
+        </div>
 
-        <footer class="mt-5">
+        <div class="container-fluid">
+            <div class="row p-2">
+                <div class="col rBorder"> </div>
+                <div class="col lBorder"> </div>
+            </div>
+        </div>
+        <h3 class="border p-2 bg-dark" style="text-align: center" href="#collapse1">
+            <a class="text-light" data-toggle="collapse" href="#collapse1"> ... Most Loyal &#40;Top 10&#37; 'Votes with Party' Rate&#41; - Dem. </a>
+        </h3>
+        <div class="panel-collapse collapse" id="collapse1">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr class="border">
+                        <th> Name </th>
+                        <th> State </th>
+                        <th> Seniority &#40;Years&#41;</th>
+                        <th> Total Votes </th>
+                        <th> Votes with Party &#40;%&#41; </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-light text-dark" id="mostLoyalBodyDem">
+                    <tr class="border-bottom"> </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row p-2">
+                <div class="col rBorder"> </div>
+                <div class="col lBorder"> </div>
+            </div>
+        </div>
+        <h3 class="border p-2 bg-dark" style="text-align: center">
+            <a class="text-light" data-toggle="collapse" href="#collapse2">  ... Most Loyal &#40;Top 10&#37; 'Votes with Party' Rate&#41; - Rep. </a>
+        </h3>
+        <div class="panel-collapse collapse" id="collapse2">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr class="border">
+                        <th> Name </th>
+                        <th> State </th>
+                        <th> Seniority &#40;Years&#41;</th>
+                        <th> Total Votes </th>
+                        <th> Votes with Party &#40;%&#41; </th>
+                    </tr>
+                <tbody class="bg-light text-dark" id="mostLoyalBodyRep">
+                    <tr class="border-bottom"> </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row p-2">
+                <div class="col rBorder"> </div>
+                <div class="col lBorder"> </div>
+            </div>
+        </div>
+        <h3 class="border bg-dark p-2" style="text-align: center">
+            <a class="text-light" data-toggle="collapse" href="#collapse3">  ... Most Loyal &#40;Top 10&#37; 'Votes with Party' Rate&#41; - Indep.</a>
+        </h3>
+        <div class="panel-collapse collapse" id="collapse3">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr class="border">
+                        <th> Name </th>
+                        <th> State </th>
+                        <th> Seniority &#40;Years&#41;</th>
+                        <th> Total Votes </th>
+                        <th> Votes with Party &#40;%&#41; </th>
+                    </tr>
+                <tbody class="bg-light text-dark" id="mostLoyalBodyInd">
+                    <tr class="border-bottom"> </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row p-2">
+                <div class="col rBorder"> </div>
+                <div class="col lBorder"> </div>
+            </div>
+        </div>
+        <h3 class="border p-2 bg-dark" style="text-align: center">
+            <a class="text-light" data-toggle="collapse" href="#collapse4">  ... Least Loyal &#40;Top 10&#37; 'Votes with Party' Rate&#41; - Overall.</a>
+        </h3>
+        <div class="panel-collapse collapse" id="collapse4">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr class="border">
+                        <th> Name </th>
+                        <th> Party </th>
+                        <th> State </th>
+                        <th> Seniority &#40;Years&#41; </th>
+                        <th> Total Votes </th>
+                        <th> Votes with Party &#40;%&#41; </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-light text-dark" id="leastLoyalBody">
+                    <tr class="border-bottom"> </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row p-2">
+                <div class="col rBorder"> </div>
+                <div class="col lBorder"> </div>
+            </div>
+        </div>
+        <h3 class="border p-2 bg-dark" style="text-align: center">
+            <a class="text-light" data-toggle="collapse" href="#collapse6">  ... Least Loyal &#40;Top 10&#37; 'Votes with Party' Rate&#41; - Dem.</a>
+        </h3>
+        <div class="panel-collapse collapse" id="collapse6">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr class="border">
+                        <th> Name </th>
+                        <th> State </th>
+                        <th> Seniority &#40;Years&#41;</th>
+                        <th> Total Votes </th>
+                        <th> Votes with Party &#40;%&#41; </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-light text-dark" id="leastLoyalBodyDem">
+                    <tr class="border-bottom"> </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row p-2">
+                <div class="col rBorder"> </div>
+                <div class="col lBorder"> </div>
+            </div>
+        </div>
+        <h3 class="border p-2 bg-dark" style="text-align: center">
+            <a class="text-light" data-toggle="collapse" href="#collapse7"> ... Least Loyal &#40;Top 10&#37; 'Votes with Party' Rate&#41; - Rep. </a>
+        </h3>
+        <div class="panel-collapse collapse" id="collapse7">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr class="border">
+                        <th> Name </th>
+                        <th> State </th>
+                        <th> Seniority &#40;Years&#41;</th>
+                        <th> Total Votes </th>
+                        <th> Votes with Party &#40;%&#41; </th>
+                    </tr>
+                <tbody class="bg-light text-dark" id="leastLoyalBodyRep">
+                    <tr class="border-bottom"> </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row p-2">
+                <div class="col rBorder"> </div>
+                <div class="col lBorder"> </div>
+            </div>
+        </div>
+        <h3 class="border p-2 bg-dark" style="text-align: center">
+            <a class="text-light" data-toggle="collapse" href="#collapse8"> ... Least Loyal &#40;Top 10&#37; 'Votes with Party' Rate&#41; - Indep. </a>
+        </h3>
+        <div class="panel-collapse collapse" id="collapse8">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr class="border">
+                        <th> Name </th>
+                        <th> State </th>
+                        <th> Seniority &#40;Years&#41;</th>
+                        <th> Total Votes </th>
+                        <th> Votes with Party &#40;%&#41; </th>
+                    </tr>
+                <tbody class="bg-light text-dark" id="leastLoyalBodyInd">
+                    <tr class="border-bottom"> </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer class="my-5">
             <div class="d-flex justify-content-center">
                 <p> &copy;2019 Transparent Government in Fact | TGIF </p>
             </div>
@@ -113,9 +305,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
         glanceTable(allMembers)
+        topLoyalTable();
+        topLoyalTableDem();
+        topLoyalTableRep();
+        topLoyalTableInd();
+        leastLoyalTable();
+        leastLoyalTableDem();
+        leastLoyalTableRep();
+        leastLoyalTableInd();
     </script>
-
-
 </body>
 
 </html>

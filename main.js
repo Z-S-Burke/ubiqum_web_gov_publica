@@ -8,6 +8,9 @@ var demSort = function (property) {
 var demArray = demArr();
 demArray = demArray.sort(demSort('missed_votes_pct'));
 
+var demLoyal = demArr();
+demLoyal = demLoyal.sort(demSort('votes_with_party_pct'));
+
 var repubSort = function (property) {
     return function (x, y) {
         return ((x[property] === y[property]) ? 0 : ((x[property] > y[property]) ? 1 : -1));
@@ -15,6 +18,9 @@ var repubSort = function (property) {
 };
 var repubArray = repArr();
 repubArray.sort(repubSort('missed_votes_pct'));
+
+var repLoyal = repArr();
+repLoyal.sort(repubSort('votes_with_party_pct'));
 
 var indSort = function (property) {
     return function (x, y) {
@@ -31,6 +37,9 @@ var memSort = function (property) {
 };
 var memArray = allMembers;
 memArray.sort(memSort('missed_votes_pct'));
+
+var memLoyal = allMembers;
+memLoyal.sort(memSort('votes_with_party_pct'));
 
 var states = usStates;
 
@@ -220,14 +229,21 @@ function glanceTable(allMembers) {
 
 }
 
-function sortNum(a, b) {
-    return a - b;
-}
 
 function bestAttendRes(arrValue) {
     var numArray = [];
     for (var i = 0; i < arrValue.length; i++) {
         numArray.push(arrValue[i].missed_votes_pct);
+    }
+    numArray = numArray.sort();
+
+    return numArray;
+}
+
+function mostLoyalRes(arrValue) {
+    var numArray = [];
+    for (var i = 0; i < arrValue.length; i++) {
+        numArray.push(arrValue[i].votes_with_party_pct);
     }
     numArray = numArray.sort();
 
@@ -256,6 +272,29 @@ function topAttendTableDem() {
     }
 }
 
+function topLoyalTableDem() {
+
+    var tBody = document.getElementById("mostLoyalBodyDem");
+    var dArray = mostLoyalRes(demArr());
+
+    var topTenDem = demArr().length / 10;
+    topTenDem = Math.floor(topTenDem);
+    console.log(topTenDem);
+
+    for (var i = demLoyal.length - 1; i > demLoyal.length - topTenDem; i--) {
+        var tRow1 = tBody.insertRow();
+        if (demLoyal[i].middle_name == null) {
+            tRow1.insertCell().innerHTML = demLoyal[i].last_name + ", " + demLoyal[i].first_name;
+        } else {
+            tRow1.insertCell().innerHTML = demLoyal[i].last_name + ", " + demLoyal[i].first_name + " " + demLoyal[i].middle_name;
+        }
+        tRow1.insertCell().innerHTML = demLoyal[i].state;
+        tRow1.insertCell().innerHTML = demLoyal[i].seniority;
+        tRow1.insertCell().innerHTML = demLoyal[i].total_votes;
+        tRow1.insertCell().innerHTML = demLoyal[i].votes_with_party_pct;
+    }
+}
+
 function topAttendTableRep() {
 
     var tBody = document.getElementById("mostAttendBodyRep");
@@ -273,6 +312,26 @@ function topAttendTableRep() {
         tRow1.insertCell().innerHTML = repubArray[i].seniority;
         tRow1.insertCell().innerHTML = repubArray[i].missed_votes;
         tRow1.insertCell().innerHTML = repubArray[i].missed_votes_pct;
+    }
+}
+
+function topLoyalTableRep() {
+
+    var tBody = document.getElementById("mostLoyalBodyRep");
+    var topTenRep = repArr().length / 10;
+    topTenRep = Math.floor(topTenRep);
+
+    for (var i = repLoyal.length - 1; i > repLoyal.length - topTenRep; i--) {
+        var tRow1 = tBody.insertRow();
+        if (repLoyal[i].middle_name == null) {
+            tRow1.insertCell().innerHTML = repLoyal[i].last_name + ", " + repLoyal[i].first_name;
+        } else {
+            tRow1.insertCell().innerHTML = repLoyal[i].last_name + ", " + repLoyal[i].first_name + " " + repLoyal[i].middle_name;
+        }
+        tRow1.insertCell().innerHTML = repLoyal[i].state;
+        tRow1.insertCell().innerHTML = repLoyal[i].seniority;
+        tRow1.insertCell().innerHTML = repLoyal[i].missed_votes;
+        tRow1.insertCell().innerHTML = repLoyal[i].votes_with_party_pct;
     }
 }
 
@@ -304,6 +363,13 @@ function topAttendTableInd() {
     }
 }
 
+function topLoyalTableInd() {
+
+    var tBody = document.getElementById("mostLoyalBodyInd");
+    var tRow1 = tBody.insertRow();
+    tRow1.insertCell().innerHTML = "There are no Independent representatives to display.";
+}
+
 function topAttendTable() {
 
     var tBody = document.getElementById("mostAttendBody");
@@ -325,6 +391,27 @@ function topAttendTable() {
     }
 }
 
+function topLoyalTable() {
+
+    var tBody = document.getElementById("mostLoyalBody");
+    var topTen = memLoyal.length / 10;
+    topTen = Math.floor(topTen);
+
+    for (var i = memLoyal.length - 1; i > memLoyal.length - topTen; i--) {
+        var tRow1 = tBody.insertRow();
+        if (memLoyal[i].middle_name == null) {
+            tRow1.insertCell().innerHTML = memLoyal[i].last_name + ", " + memLoyal[i].first_name;
+        } else {
+            tRow1.insertCell().innerHTML = memLoyal[i].last_name + ", " + memLoyal[i].first_name + " " + memLoyal[i].middle_name;
+        }
+        tRow1.insertCell().innerHTML = memLoyal[i].party;
+        tRow1.insertCell().innerHTML = memLoyal[i].state;
+        tRow1.insertCell().innerHTML = memLoyal[i].seniority;
+        tRow1.insertCell().innerHTML = memLoyal[i].missed_votes;
+        tRow1.insertCell().innerHTML = memLoyal[i].votes_with_party_pct;
+    }
+}
+
 function leastAttendTable() {
     var tBody = document.getElementById("leastAttendBody");
     var topTen = memArray.length / 10;
@@ -342,6 +429,27 @@ function leastAttendTable() {
         tRow1.insertCell().innerHTML = memArray[i].seniority;
         tRow1.insertCell().innerHTML = memArray[i].missed_votes;
         tRow1.insertCell().innerHTML = memArray[i].missed_votes_pct;
+    }
+}
+
+function leastLoyalTable() {
+
+    var tBody = document.getElementById("leastLoyalBody");
+    var topTen = memLoyal.length / 10;
+    topTen = Math.floor(topTen);
+
+    for (var i = 0; i < topTen; i++) {
+        var tRow1 = tBody.insertRow();
+        if (memLoyal[i].middle_name == null) {
+            tRow1.insertCell().innerHTML = memLoyal[i].last_name + ", " + memLoyal[i].first_name;
+        } else {
+            tRow1.insertCell().innerHTML = memLoyal[i].last_name + ", " + memLoyal[i].first_name + " " + memLoyal[i].middle_name;
+        }
+        tRow1.insertCell().innerHTML = memLoyal[i].party;
+        tRow1.insertCell().innerHTML = memLoyal[i].state;
+        tRow1.insertCell().innerHTML = memLoyal[i].seniority;
+        tRow1.insertCell().innerHTML = memLoyal[i].missed_votes;
+        tRow1.insertCell().innerHTML = memLoyal[i].votes_with_party_pct;
     }
 }
 
@@ -367,6 +475,28 @@ function leastAttendTableDem() {
     }
 }
 
+function leastLoyalTableDem() {
+
+    var tBody = document.getElementById("leastLoyalBodyDem");
+    var dArray = bestAttendRes(demArr());
+
+    var topTenDem = demArr().length / 10;
+    topTenDem = Math.floor(topTenDem);
+
+    for (var i = 0; i < topTenDem; i++) {
+        var tRow1 = tBody.insertRow();
+        if (demLoyal[i].middle_name == null) {
+            tRow1.insertCell().innerHTML = demLoyal[i].last_name + ", " + demLoyal[i].first_name;
+        } else {
+            tRow1.insertCell().innerHTML = demLoyal[i].last_name + ", " + demLoyal[i].first_name + " " + demLoyal[i].middle_name;
+        }
+        tRow1.insertCell().innerHTML = demLoyal[i].state;
+        tRow1.insertCell().innerHTML = demLoyal[i].seniority;
+        tRow1.insertCell().innerHTML = demLoyal[i].missed_votes;
+        tRow1.insertCell().innerHTML = demLoyal[i].votes_with_party_pct;
+    }
+}
+
 function leastAttendTableRep() {
 
     var tBody = document.getElementById("leastAttendBodyRep");
@@ -384,6 +514,26 @@ function leastAttendTableRep() {
         tRow1.insertCell().innerHTML = repubArray[i].seniority;
         tRow1.insertCell().innerHTML = repubArray[i].missed_votes;
         tRow1.insertCell().innerHTML = repubArray[i].missed_votes_pct;
+    }
+}
+
+function leastLoyalTableRep() {
+
+    var tBody = document.getElementById("leastLoyalBodyRep");
+    var topTenRep = repArr().length / 10;
+    topTenRep = Math.floor(topTenRep);
+
+    for (var i = 0; i < topTenRep; i++) {
+        var tRow1 = tBody.insertRow();
+        if (repLoyal[i].middle_name == null) {
+            tRow1.insertCell().innerHTML = repLoyal[i].last_name + ", " + repubArray[i].first_name;
+        } else {
+            tRow1.insertCell().innerHTML = repLoyal[i].last_name + ", " + repLoyal[i].first_name + " " + repLoyal[i].middle_name;
+        }
+        tRow1.insertCell().innerHTML = repLoyal[i].state;
+        tRow1.insertCell().innerHTML = repLoyal[i].seniority;
+        tRow1.insertCell().innerHTML = repLoyal[i].missed_votes;
+        tRow1.insertCell().innerHTML = repLoyal[i].votes_with_party_pct;
     }
 }
 
@@ -409,9 +559,15 @@ function leastAttendTableInd() {
             tRow1.insertCell().innerHTML = indArray[i].missed_votes_pct;
         }
     } else { */
-        var tRow1 = tBody.insertRow();
-        tRow1.insertCell().innerHTML = "There are no Independent representatives to display.";
-//    }
+    var tRow1 = tBody.insertRow();
+    tRow1.insertCell().innerHTML = "There are no Independent representatives to display.";
+    //    }
+}
+
+function leastLoyalTableInd() {
+    var tBody = document.getElementById("leastLoyalBodyInd");
+    var tRow1 = tBody.insertRow();
+    tRow1.insertCell().innerHTML = "There are no Independent representatives to display.";
 }
 
 function loyaltyTable(allMembers) {
