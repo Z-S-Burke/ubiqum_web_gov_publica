@@ -70,8 +70,8 @@
             </div>
         </div>
         <div class=col style="height: 30px"> </div>
-        <div class="d-flex justify-content-around" style="width: 100%">
-            <div class="d-flex justify-contentn-around" style="width: 50%">
+        <div class="d-flex justify-content-between" style="width: 100%">
+            <div >
                 <form id="partySelect">
                     <label> Democrat <input class="party" type="checkbox" onchange="memberTable(allMembers)" id="partyCheck" value="D"> </input> </label>
                     <label> Independent <input class="party" type="checkbox" onchange="memberTable(allMembers)" id="partyCheck" value="I"> </input> </label>
@@ -79,7 +79,10 @@
                 </form>
             </div>
             <div class="d-flex justify-content-end" style="width: 50%">
-                <select id="state" onchange="memberTable(allMembers)" name="states"></select>
+                <div class="justify-content-around">
+                    <label> State: </label>
+                    <select id="state" onchange="memberTable(allMembers)" name="states"></select>
+                </div>
             </div>
         </div>
         <div class=col style="height: 30px"> </div>
